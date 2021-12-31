@@ -1,0 +1,5 @@
+[user]
+	name = Gabriel Alves
+	email = gabrielalves@outlook.com
+[core]
+	editor = nvim
