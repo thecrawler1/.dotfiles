@@ -272,10 +272,10 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %d-%m-%Y"
+date-alt = " %d/%m/%Y"
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
