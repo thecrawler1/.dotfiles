@@ -58,7 +58,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 ;modules-center = mpd
-modules-right = rootfilesystem homefilesystem pulseaudio memory cpu date powermenu
+modules-right = rootfilesystem homefilesystem pulseaudio memory cpu date 
 
 tray-position = right
 tray-padding = 2
