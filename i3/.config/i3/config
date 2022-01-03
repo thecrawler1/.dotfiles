@@ -38,8 +38,12 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty
 
-# start a browser
+# start apps
 bindsym $mod+b exec firefox
+bindsym $mod+a exec anki
+bindsym $mod+c exec calibre
+bindsym $mod+p exec pavucontrol
+bindsym $mod+z exec zoom
 
 # kill focused window
 bindsym $mod+q kill
