@@ -30,5 +30,12 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 alias vi=nvim
 alias vim=nvim
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias more=less
+alias mkdir='mkdir -p -v'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'
+alias cls=' echo -ne "\033c"'
 # End of lines adding alias
 
