@@ -13,6 +13,9 @@ client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $accent-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $accent-color
 
+# Start the polybar
+exec polybar main
+
 # Set the wallpaper
 exec --no-startup-id feh --no-fehbg --bg-fill '/home/thecrawler/Pictures/wallpaper.jpg' 
 
