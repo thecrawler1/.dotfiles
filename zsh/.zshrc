@@ -37,5 +37,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
 alias cls=' echo -ne "\033c"'
+alias ll='ls -lhA'
+alias open='xdg-open'
 # End of lines adding alias
 
