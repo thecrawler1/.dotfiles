@@ -45,6 +45,9 @@ bindsym $mod+c exec calibre
 bindsym $mod+p exec pavucontrol
 bindsym $mod+z exec zoom
 
+# take a screenshot
+bindsym $mod+Shift+p exec shotgun
+
 # kill focused window
 bindsym $mod+q kill
 
