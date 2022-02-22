@@ -39,6 +39,8 @@ autocomplete_parens = false
 name = 'lang#javascript'
 enable_flow_syntax = true
 
+[[layers]]
+name = 'lang#java'
 
 [[layers]]
 name = 'colorscheme'
