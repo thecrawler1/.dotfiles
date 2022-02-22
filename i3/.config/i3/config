@@ -41,7 +41,7 @@ bindsym $mod+Return exec alacritty
 # start apps
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec chromium
-bindsym $mod+a exec anki
+bindsym $mod+a exec anki --no-sandbox
 bindsym $mod+c exec calibre
 bindsym $mod+p exec pavucontrol
 bindsym $mod+s exec stremio
