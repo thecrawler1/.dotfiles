@@ -35,6 +35,10 @@ auto_completion_return_key_behavior = "complete"
 auto_completion_tab_key_behavior = "cycle"
 autocomplete_parens = false
 
+[[layers]]
+name = 'lang#javascript'
+enable_flow_syntax = true
+
 
 [[layers]]
 name = 'colorscheme'
