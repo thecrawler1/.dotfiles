@@ -7,11 +7,13 @@ autoconf
 automake
 base
 bison
+boost
 calibre
 chromium
 cmake
 cmatrix
 code
+ethtool
 firefox
 flex
 grub
@@ -22,7 +24,6 @@ img2pdf
 intel-ucode
 intellij-idea-community-edition
 iotop
-iwd
 jdk-openjdk
 kvantum
 lib32-mpg123
@@ -36,7 +37,6 @@ neovim
 nvidia
 nvidia-dkms
 nvtop
-openresolv
 optimus-manager
 pacman-contrib
 pavucontrol
@@ -51,6 +51,7 @@ python-pyqt5-purchasing
 python-sphinx
 qbittorrent
 qt5ct
+scons
 shotgun
 steam
 stow
