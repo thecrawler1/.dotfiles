@@ -44,6 +44,7 @@ bindsym $mod+Shift+b exec chromium
 bindsym $mod+a exec anki
 bindsym $mod+c exec calibre
 bindsym $mod+p exec pavucontrol
+bindsym $mod+s exec stremio
 bindsym $mod+z exec zoom
 
 # take a screenshot
