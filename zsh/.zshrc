@@ -42,3 +42,6 @@ export PATH=/home/thecrawler/.cargo/bin:$PATH
 
 # Add lunarvim to path
 export PATH=/home/thecrawler/.local/bin:$PATH
+
+# Add zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
