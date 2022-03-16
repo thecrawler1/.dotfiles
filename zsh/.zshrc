@@ -33,6 +33,7 @@ alias rm='rm -I'
 alias cls=' echo -ne "\033c"'
 alias open='xdg-open'
 alias cd=z
+alias sudo='sudo -v; sudo '
 # End of lines adding alias
 
 # Load powerlevel10k
