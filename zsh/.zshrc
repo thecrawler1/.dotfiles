@@ -17,9 +17,13 @@ bindkey -v
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Lines to add alias
-alias vi=nvim
-alias vim=nvim
-alias ls='ls --color=auto'
+alias vi=lvim
+alias vim=lvim
+alias ls='exa --icons'
+alias la='exa -a --icons'
+alias ll='exa -la --icons'
+alias cat='bat --style=auto'
+alias top=ytop
 alias grep='grep --color=auto'
 alias more=less
 alias mkdir='mkdir -p -v'
@@ -27,8 +31,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
 alias cls=' echo -ne "\033c"'
-alias ll='ls -lhA'
 alias open='xdg-open'
+alias cd=z
 # End of lines adding alias
 
 # Load powerlevel10k
