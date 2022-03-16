@@ -22,7 +22,7 @@ alias vim=lvim
 alias ls='exa --icons'
 alias la='exa -a --icons'
 alias ll='exa -la --icons'
-alias cat='bat --style=auto'
+alias cat='bat --style=auto --theme="OneHalfDark"'
 alias top=ytop
 alias grep='grep --color=auto'
 alias more=less
