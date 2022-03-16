@@ -39,3 +39,6 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Add cargo to path
 export PATH=/home/thecrawler/.cargo/bin:$PATH
+
+# Add lunarvim to path
+export PATH=/home/thecrawler/.local/bin:$PATH
