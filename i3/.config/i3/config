@@ -48,7 +48,7 @@ bindsym $mod+s exec stremio
 bindsym $mod+z exec zoom
 
 # turn off laptop screen
-bindsym $mod+Shift+s exec xrandr --output eDP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+bindsym $mod+Shift+s exec xrandr --output eDP1 --off --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
 # take a screenshot
 bindsym $mod+Shift+p exec shotgun
@@ -165,7 +165,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Config displays
-exec_always --no-startup-id xrandr --output eDP-1 --mode 1366x768 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+exec_always --no-startup-id xrandr --output eDP1 --mode 1366x768 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
 # Fix floating windows
 for_window [window_role="pop-up"] floating enable
