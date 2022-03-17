@@ -1,19 +1,19 @@
 font:
   normal:
-    family: DejaVu Sans Mono
-    style: Book
+    family: MesloLGS NF
+    style: Regular
 
   bold:
-    family: DejaVu Sans Mono
+    family: MesloLGS NF
     style: Bold
 
   italic:
-    family: DejaVu Sans Mono
-    style: Oblique
+    family: MesloLGS NF
+    style: Italic
 
   bold_italic:
-    family: DejaVu Sans Mono
-    style: Bold Oblique
+    family: MesloLGS NF
+    style: Bold Italic
 
   size: 12
 

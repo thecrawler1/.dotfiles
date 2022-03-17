@@ -23,7 +23,7 @@ exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/thecrawler/Pictures/
 set $mod Mod1
 
 # Set font
-font pango:DejaVu Sans Mono 10
+font pango: MesloLGS NF Regular 10
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -57,7 +57,7 @@ bindsym $mod+Shift+p exec shotgun
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "DejaVu Sans Mono-12" -nb "$bg-color" -sb "$accent-color"
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF Regular-12" -nb "$bg-color" -sb "$accent-color"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
