@@ -13,6 +13,11 @@ setopt autocd beep extendedglob nomatch
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# To enable autocompletion
+autoload -Uz compinit
+compinit
+zstyle ':completion::complete:*' gain-privileges 1
+
 # Line to configure zsh highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
