@@ -56,6 +56,9 @@ export PATH=/home/thecrawler/.local/bin:$PATH
 # Add zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Add asdf
+source /opt/asdf-vm/asdf.sh
+
 # =============================================================================
 #
 # Utility functions for zoxide.
