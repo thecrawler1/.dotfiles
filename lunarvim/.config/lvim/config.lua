@@ -10,7 +10,7 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.colorscheme = "onedarker"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
@@ -151,3 +151,8 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 vim.opt.timeoutlen = 500
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 0
+vim.opt.relativenumber = true
+vim.opt.expandtab = true
+vim.opt.colorcolumn = "90"
