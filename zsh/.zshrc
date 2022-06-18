@@ -59,6 +59,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Add asdf
 source /opt/asdf-vm/asdf.sh
 
+# Set lunar vim as the default editor
+export EDITOR=lvim
+
 # =============================================================================
 #
 # Utility functions for zoxide.
