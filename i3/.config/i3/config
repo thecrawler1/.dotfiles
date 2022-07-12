@@ -17,7 +17,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 exec --no-startup-id polybar main
 
 # Set the wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/thecrawler/Pictures/wallpaper.jpg' 
+exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/thecrawler/Pictures/wallpaper.png'
 
 # Set the mod key
 set $mod Mod1
