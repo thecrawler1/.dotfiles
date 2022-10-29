@@ -155,4 +155,4 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0
 vim.opt.relativenumber = true
 vim.opt.expandtab = true
-vim.opt.colorcolumn = "90"
+vim.opt.colorcolumn = "100"
