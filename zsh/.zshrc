@@ -13,6 +13,9 @@ setopt autocd beep extendedglob nomatch
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# Map jk to exit vim insert mode
+bindkey -M viins 'jk' vi-cmd-mode
+
 # To enable autocompletion
 autoload -Uz compinit
 compinit
