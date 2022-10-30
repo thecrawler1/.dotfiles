@@ -23,6 +23,8 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["-"] = "<C-x><CR>";
+lvim.keys.normal_mode["="] = "<C-a><CR>";
 lvim.keys.insert_mode["jj"] = "<ESC>";
 lvim.keys.insert_mode["jk"] = "<ESC>";
 -- unmap a default keymapping
