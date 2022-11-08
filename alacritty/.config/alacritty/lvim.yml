@@ -23,8 +23,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '0x383c4a'
-    foreground: '0xd3dae3'
+    background: '0x1f2227'
+    foreground: '0xd8dee9'
 
   # Normal colors
   normal:
@@ -69,8 +69,8 @@ cursor:
 
 window:
   padding:
-    x: 10
-    y: 10
+    x: 0
+    y: 0
   # scrolling:
   #   # Maximum number of lines in the scrollback buffer.
   #   # Specifying '0' will disable scrolling.

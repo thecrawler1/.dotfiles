@@ -1,105 +1,7 @@
-# Define colors
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-set $accent-color     	 #4877B1
+# Config screens
+exec --no-startup-id /home/thecrawler/.config/i3/configure_screens.sh
 
-# Window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          $accent-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $accent-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $accent-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $accent-color
-
-# Start the polybar
-exec --no-startup-id polybar main
-
-# Set the wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/thecrawler/Pictures/wallpaper.jpg'
-
-# Set the mod key
-set $mod Mod1
-
-# Set font
-font pango: MesloLGS NF Regular 10
-
-# Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec alacritty
-
-# start apps
-bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec chromium
-bindsym $mod+a exec anki
-bindsym $mod+c exec calibre
-bindsym $mod+p exec pavucontrol
-bindsym $mod+s exec stremio
-bindsym $mod+z exec zoom
-
-# turn off laptop screen
-bindsym $mod+Shift+s exec xrandr --output eDP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
-
-# take a screenshot
-bindsym $mod+Shift+p exec shotgun
-
-# kill focused window
-bindsym $mod+q kill
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF Regular-12" -nb "$bg-color" -sb "$accent-color"
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# split in horizontal/vertial orientation
-bindsym $mod+o split toggle 
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-# bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+# Define workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -111,7 +13,30 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+# Define modes
+set $mode_applications "applications"
+set $mode_windows_manager "windows manager"
+set $mode_resize "resize"
+
+# Define colors
+set $bg-color 	         #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+set $accent-color     	 #4877B1
+
+# Define the mod key
+set $mod Mod1
+
+# Assign workspaces
+assign [class="Zoom"] $ws1
+assign [class="Alacritty"] $ws2
+assign [class="LunarVim"] $ws3
+assign [class="(?i)firefox"] $ws4
+assign [class="Slack"] $ws5
+
+# Switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -123,7 +48,7 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -135,37 +60,121 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# reload the configuration file
-# bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# Kill focused window
+bindsym $mod+q kill
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# Switch to workspace
+bindsym $mod+a workspace number $ws1
+bindsym $mod+s workspace number $ws2
+bindsym $mod+d workspace number $ws3
+bindsym $mod+f workspace number $ws4
+bindsym $mod+g workspace number $ws5
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+# Start dmenu
+bindsym $mod+semicolon exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "MesloLGS NF Regular-18" -nb "$bg-color" -sb "$accent-color"'
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+space fullscreen toggle
+
+# Turn off the laptop screen
+bindsym $mod+F2 exec --no-startup-id /home/thecrawler/.config/i3/toggle_laptop_screen.sh
+
+# Turn off the PC
+bindsym $mod+Shift+F4 exec --no-startup-id poweroff
+
+# Reload the configuration file
+bindsym $mod+F5 restart
+
+# Take a screenshot
+bindsym --release Print exec --no-startup-id scrot --silent --select /home/thecrawler/Pictures/screenshot_%d-%m-%Y_%T.png
+
+# Switch to mode
+bindsym $mod+Return mode $mode_applications
+bindsym $mod+Shift+Return mode $mode_windows_manager
+bindsym $mod+r mode $mode_resize
+
+mode $mode_applications {
+  bindsym t exec alacritty, workspace number 2, mode "default"
+  bindsym l exec alacritty --class LunarVim --config-file /home/thecrawler/.config/alacritty/lvim.yml --working-directory /home/thecrawler/Projects -e /./home/thecrawler/.local/bin/lvim ., workspace number 3, mode "default"
+  bindsym b exec firefox, workspace number 4, mode "default"
+  bindsym a exec anki, mode "default"
+  bindsym c exec calibre, mode "default"
+  bindsym p exec pavucontrol, mode "default"
+  bindsym s exec slack, workspace number 5, mode "default"
+  bindsym z exec zoom, workspace number 1, mode "default"
+  # bindsym Shift+s exec stremio, mode "default"
+  bindsym Shift+b exec chromium, mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+Return mode "default"
 }
 
-bindsym $mod+r mode "resize"
+mode $mode_windows_manager {
+  # move focused window
+  bindsym h move left
+  bindsym j move down
+  bindsym k move up
+  bindsym l move right
 
-# Config displays
-exec_always --no-startup-id xrandr --output eDP-1 --mode 1366x768 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+  # toggle tiling / floating
+  bindsym space floating toggle
+
+  # change focus between tiling / floating windows
+  bindsym Shift+space focus mode_toggle
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+Shift+Return mode "default"
+}
+
+mode $mode_resize {
+  bindsym h resize shrink width 5 px or 5 ppt
+  bindsym j resize grow height 5 px or 5 ppt
+  bindsym k resize shrink height 5 px or 5 ppt
+  bindsym l resize grow width 5 px or 5 ppt
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+
+# Set font
+font pango: MesloLGS NF Regular 12
+
+# Start autotiling
+exec_always --no-startup-id autotiling
+
+# Hide edge borders
+hide_edge_borders both
 
 # Fix floating windows
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+for_window [window_role="GtkFileChooserDialog"] move position center
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Set the wallpaper
+exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/thecrawler/Pictures/wallpaper.jpg'
+
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
