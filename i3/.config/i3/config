@@ -2,7 +2,7 @@
 exec --no-startup-id /home/thecrawler/.config/i3/configure_screens.sh
 
 # Start picom
-# exec --no-startup-id picom -i 1 -e 0 -D 8 -b
+exec --no-startup-id picom -i 1 -e 0 -D 8 -b
 
 # Define workspaces
 set $ws1 "1"
