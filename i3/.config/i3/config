@@ -35,6 +35,7 @@ assign [class="Alacritty"] $ws2
 assign [class="LunarVim"] $ws3
 assign [class="(?i)firefox"] $ws4
 assign [class="Slack"] $ws5
+assign [title="Discord"] $ws5
 
 # Switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -107,6 +108,7 @@ mode $mode_applications {
   bindsym c exec calibre, mode "default"
   bindsym p exec pavucontrol, mode "default"
   bindsym s exec slack, workspace number 5, mode "default"
+  bindsym d exec discord, workspace number 5, mode "default"
   bindsym z exec zoom, workspace number 1, mode "default"
   # bindsym Shift+s exec stremio, mode "default"
   bindsym Shift+b exec chromium, mode "default"
