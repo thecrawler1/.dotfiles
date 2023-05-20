@@ -86,8 +86,6 @@ bindsym $mod+semicolon exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -
 # Enter fullscreen mode for the focused container
 bindsym $mod+space fullscreen toggle
 
-# Turn off the laptop screen
-bindsym $mod+F2 exec --no-startup-id /home/thecrawler/.config/i3/toggle_laptop_screen.sh
 
 # Turn off the PC
 bindsym $mod+Shift+F4 exec --no-startup-id poweroff
