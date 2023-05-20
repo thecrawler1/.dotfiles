@@ -33,11 +33,12 @@ set $accent-color     	 #4877B1
 set $mod Mod1
 
 # Assign workspaces
-assign [class="Zoom"] $ws1
+assign [class="Anki"] $ws1
+assign [class="Postman"] $ws1
+assign [class="Chromium"] $ws1
 assign [class="Alacritty"] $ws2
 assign [class="LunarVim"] $ws3
 assign [class="(?i)firefox"] $ws4
-assign [class="Slack"] $ws5
 assign [title="Discord"] $ws5
 
 # Switch to workspace
