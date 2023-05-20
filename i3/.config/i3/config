@@ -82,7 +82,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # Start dmenu
-bindsym $mod+semicolon exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "MesloLGS NF Regular-18" -nb "$bg-color" -sb "$accent-color"'
+bindsym $mod+semicolon exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "MesloLGS NF Regular-13" -nb "$bg-color" -sb "$accent-color"'
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+space fullscreen toggle
