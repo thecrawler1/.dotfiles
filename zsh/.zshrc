@@ -31,7 +31,7 @@ alias ls='exa -l --icons'
 alias la='exa -a --icons'
 alias ll='exa -la --icons'
 alias cat='bat --style=auto --theme="OneHalfDark"'
-alias top=ytop
+alias top=btm
 alias grep='grep --color=auto'
 alias less=cat
 alias more=less
