@@ -85,8 +85,7 @@ bindsym $mod+l focus right
 bindsym $mod+semicolon exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "MesloLGS NF Regular-13" -nb "$bg-color" -sb "$accent-color"'
 
 # Enter fullscreen mode for the focused container
-bindsym $mod+space fullscreen toggle
-
+bindsym $mod+Return fullscreen toggle
 
 # Turn off the PC
 bindsym $mod+Shift+F4 exec --no-startup-id poweroff
@@ -98,7 +97,7 @@ bindsym $mod+F5 restart
 bindsym --release Print exec --no-startup-id scrot --silent --select /home/thecrawler/Pictures/screenshot_%d-%m-%Y_%T.png
 
 # Switch to mode
-bindsym $mod+Return mode $mode_applications
+bindsym $mod+space mode $mode_applications
 bindsym $mod+Shift+Return mode $mode_windows_manager
 bindsym $mod+r mode $mode_resize
 
