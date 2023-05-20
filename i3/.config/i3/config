@@ -111,7 +111,7 @@ mode $mode_applications {
   bindsym s exec slack, workspace number 5, mode "default"
   bindsym d exec discord, workspace number 5, mode "default"
   bindsym z exec zoom, workspace number 1, mode "default"
-  # bindsym Shift+s exec stremio, mode "default"
+  bindsym Shift+s exec stremio, mode "default"
   bindsym Shift+b exec chromium, mode "default"
 
   bindsym Return mode "default"
