@@ -1,2 +1,2 @@
 # .dotfiles
-![arch](/screenshots/arch.jpg)
+![rice](/screenshots/rice.jpg)
