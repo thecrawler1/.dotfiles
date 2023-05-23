@@ -30,6 +30,7 @@ alias vim=nvim
 alias ls='exa -l --icons'
 alias la='exa -a --icons'
 alias ll='exa -la --icons'
+alias lo='ll --sort=modified'
 alias cat='bat --style=auto --theme="OneHalfDark"'
 alias top=btm
 alias grep='grep --color=auto'
