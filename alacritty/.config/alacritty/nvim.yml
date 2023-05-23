@@ -1,0 +1,14 @@
+import:
+  - ./alacritty.yml
+
+window:
+  padding:
+    x: 0
+    y: 0
+
+font:
+  size: 14
+
+colors:
+  primary:
+    background: '#1E1E1E'
