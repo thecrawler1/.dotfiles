@@ -37,7 +37,7 @@ assign [class="Anki"] $ws1
 assign [class="Postman"] $ws1
 assign [class="Chromium"] $ws1
 assign [class="Alacritty"] $ws2
-assign [class="LunarVim"] $ws3
+assign [class="NeoVim"] $ws3
 assign [class="(?i)firefox"] $ws4
 assign [title="Discord"] $ws5
 
@@ -103,7 +103,7 @@ bindsym $mod+r mode $mode_resize
 
 mode $mode_applications {
   bindsym t exec alacritty, workspace number 2, mode "default"
-  bindsym l exec alacritty --class LunarVim --config-file /home/thecrawler/.config/alacritty/lvim.yml --working-directory /home/thecrawler/Projects -e /./home/thecrawler/.local/bin/lvim ., workspace number 3, mode "default"
+  bindsym l exec alacritty --class NeoVim --config-file /home/thecrawler/.config/alacritty/nvim.yml --working-directory /home/thecrawler/Projects -e nvim ., workspace number 3, mode "default"
   bindsym b exec firefox, workspace number 4, mode "default"
   bindsym a exec anki, workspace number 1, mode "default"
   bindsym c exec calibre, mode "default"
