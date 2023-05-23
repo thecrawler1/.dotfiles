@@ -1,5 +1,5 @@
 # Config screens
-exec --no-startup-id /home/thecrawler/.config/i3/configure_screens.sh
+exec --no-startup-id polybar main
 
 # Start picom
 exec --no-startup-id picom -i 1 -e 1 -D 8 -o 0 -r 0 -b
