@@ -80,6 +80,9 @@ return packer.startup(function(use)
   -- Bufferline
   use {"akinsho/bufferline.nvim", tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+  use 'nvim-telescope/telescope-media-files.nvim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
