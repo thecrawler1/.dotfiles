@@ -36,3 +36,9 @@ keymap("v", "<", "<gv")
 
 -- Disable highligth
 keymap("n", "<leader>h", ":noh<CR>")
+
+-- Surround
+keymap("o", "ir", "i[")
+keymap("o", "ar", "a[")
+keymap("o", "ia", "i<")
+keymap("o", "aa", "a<")
