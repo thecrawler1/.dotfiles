@@ -105,7 +105,7 @@ bindsym $mod+r mode $mode_resize
 
 mode $mode_applications {
   bindsym t exec alacritty, workspace number 2, mode "default"
-  bindsym l exec alacritty --class NeoVim --config-file /home/thecrawler/.config/alacritty/nvim.yml --working-directory /home/thecrawler/Projects -e nvim ., workspace number 3, mode "default"
+  bindsym l exec alacritty --class NeoVim --working-directory /home/thecrawler/Projects -e nvim ., workspace number 3, mode "default"
   bindsym b exec firefox, workspace number 4, mode "default"
   bindsym a exec anki, workspace number 1, mode "default"
   bindsym c exec calibre, mode "default"
