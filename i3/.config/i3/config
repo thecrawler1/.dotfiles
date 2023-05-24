@@ -39,6 +39,7 @@ assign [class="Chromium"] $ws1
 assign [class="Alacritty"] $ws2
 assign [class="NeoVim"] $ws3
 assign [class="(?i)firefox"] $ws4
+assign [class="VirtualBox Machine"] $ws5
 assign [title="Discord"] $ws5
 
 # Switch to workspace
@@ -111,6 +112,7 @@ mode $mode_applications {
   bindsym p exec pavucontrol, mode "default"
   bindsym s exec slack, workspace number 5, mode "default"
   bindsym d exec discord, workspace number 5, mode "default"
+  bindsym w exec vboxmanage startvm "windows", workspace number 5, mode "default"
   bindsym Shift+s exec stremio, mode "default"
   bindsym Shift+b exec chromium, mode "default"
 
@@ -162,6 +164,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
+for_window [class="VirtualBox Machine"] fullscreen enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
