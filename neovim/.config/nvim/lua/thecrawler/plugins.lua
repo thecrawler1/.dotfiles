@@ -60,6 +60,7 @@ return packer.startup(function(use)
     end
   }
   use "lewis6991/gitsigns.nvim"
+  use "akinsho/toggleterm.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
