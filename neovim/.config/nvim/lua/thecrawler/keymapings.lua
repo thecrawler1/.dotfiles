@@ -13,7 +13,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>")
 -- Buffer navigation
 keymap("n", "H", ":bp<CR>")
 keymap("n", "L", ":bn<CR>")
-keymap("n", "<leader>c", ":bd<CR>")
+keymap("n", "<leader>c", ":Bdelete<CR>")
 
 -- Windows navigation
 keymap("n", "<C-h>", "<C-w>h")
