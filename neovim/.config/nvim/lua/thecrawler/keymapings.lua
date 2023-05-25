@@ -42,3 +42,10 @@ keymap("o", "ir", "i[")
 keymap("o", "ar", "a[")
 keymap("o", "ia", "i<")
 keymap("o", "aa", "a<")
+
+-- Gitsigns
+keymap("n", "<leader>gh", ":Gitsigns blame_line<CR>")
+keymap("n", "<leader>gd", ":Gitsigns diffthis<CR>")
+keymap("n", "<leader>gn", ":Gitsigns next_hunk<CR>")
+keymap("n", "<leader>gp", ":Gitsigns prev_hunk<CR>")
+keymap("n", "<leader>gs", ":Gitsigns stage_hunk<CR>")
