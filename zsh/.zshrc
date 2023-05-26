@@ -43,6 +43,7 @@ alias cls=clear
 alias open='xdg-open'
 alias cd=z
 alias sudo='sudo -v; sudo '
+alias du='du -h'
 alias ...='../..'
 alias ....='../../..'
 alias .....='../../../..'
