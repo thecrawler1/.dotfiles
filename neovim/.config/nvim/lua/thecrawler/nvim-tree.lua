@@ -11,7 +11,6 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 local function on_attach(bufnr)
-  vim.notify("on_attach")
   local api = require('nvim-tree.api')
 
   local function opts(desc)
