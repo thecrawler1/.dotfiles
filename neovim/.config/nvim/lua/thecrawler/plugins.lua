@@ -61,6 +61,11 @@ return packer.startup(function(use)
   }
   use "lewis6991/gitsigns.nvim"
   use "akinsho/toggleterm.nvim"
+  use "ThePrimeagen/vim-be-good"
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
