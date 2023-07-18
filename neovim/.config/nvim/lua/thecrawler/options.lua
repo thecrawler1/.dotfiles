@@ -31,7 +31,6 @@ local set_options = {
 
 local append_options = {
   shortmess = "c",
-  iskeyword = "-",
   whichwrap = "<,>,[,],h,l",
 }
 
