@@ -18,6 +18,7 @@ set $ws10 "10"
 
 # Define modes
 set $mode_applications "applications"
+set $mode_bluetooth "bluetooth"
 set $mode_windows_manager "windows manager"
 set $mode_resize "resize"
 
@@ -31,6 +32,9 @@ set $accent-color     	 #0073E5
 
 # Define the mod key
 set $mod Mod1
+
+# Define bluetooth mac addresses
+set $headset "5C:C6:E9:12:4C:6F"
 
 # Assign workspaces
 assign [class="Anki"] $ws1
@@ -100,6 +104,7 @@ bindsym --release $mod+Insert exec --no-startup-id scrot --silent --select /home
 
 # Switch to mode
 bindsym $mod+space mode $mode_applications
+bindsym $mod+b mode $mode_bluetooth
 bindsym $mod+Shift+Return mode $mode_windows_manager
 bindsym $mod+r mode $mode_resize
 
@@ -118,7 +123,18 @@ mode $mode_applications {
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+Return mode "default"
+  bindsym $mod+space mode "default"
+}
+
+mode $mode_bluetooth {
+  bindsym f exec bluetoothctl power on, mode "default"
+  bindsym d exec bluetoothctl power off, mode "default"
+  bindsym j exec bluetoothctl connect $headset, mode "default"
+  bindsym k exec bluetoothctl disconnect $headset, mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+b mode "default"
 }
 
 mode $mode_windows_manager {
