@@ -53,6 +53,7 @@ alias ........='../../../../../../..'
 alias .........='../../../../../../../..'
 alias ..........='../../../../../../../../..'
 alias ...........='../../../../../../../../../..'
+alias zomboid=~/Games/ProjectZomboid/start.n.sh
 # End of lines adding alias
 
 # Load powerlevel10k
