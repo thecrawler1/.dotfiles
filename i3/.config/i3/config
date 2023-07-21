@@ -37,16 +37,23 @@ set $mod Mod1
 set $headset "5C:C6:E9:12:4C:6F"
 
 # Assign workspaces
-assign [class="Anki"] $ws1
-assign [class="Postman"] $ws1
-assign [class="Chromium"] $ws1
-assign [class="steam"] $ws1
+assign [class="(?i)teams"] $ws1
 assign [class="Alacritty"] $ws2
 assign [class="NeoVim"] $ws3
 assign [class="jetbrains-idea-ce"] $ws3
 assign [class="(?i)firefox"] $ws4
 assign [class="VirtualBox Machine"] $ws5
+assign [class="calibre"] $ws5
+assign [class="Pavucontrol"] $ws5
+assign [class="steam"] $ws5
 assign [title="Discord"] $ws5
+assign [class="Chromium"] $ws7
+assign [class="Postman"] $ws8
+assign [class="Anki"] $ws9
+assign [class="Stremio"] $ws10
+
+# Kill focused window
+bindsym $mod+Shift+k kill
 
 # Switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -60,6 +67,17 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+bindsym $mod+a workspace number $ws1
+bindsym $mod+s workspace number $ws2
+bindsym $mod+d workspace number $ws3
+bindsym $mod+f workspace number $ws4
+bindsym $mod+g workspace number $ws5
+bindsym $mod+t workspace number $ws6
+bindsym $mod+r workspace number $ws7
+bindsym $mod+e workspace number $ws8
+bindsym $mod+w workspace number $ws9
+bindsym $mod+q workspace number $ws10
+
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -72,15 +90,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# Kill focused window
-bindsym $mod+q kill
-
-# Switch to workspace
-bindsym $mod+a workspace number $ws1
-bindsym $mod+s workspace number $ws2
-bindsym $mod+d workspace number $ws3
-bindsym $mod+f workspace number $ws4
-bindsym $mod+g workspace number $ws5
+bindsym $mod+Shift+a move container to workspace number $ws1
+bindsym $mod+Shift+s move container to workspace number $ws2
+bindsym $mod+Shift+d move container to workspace number $ws3
+bindsym $mod+Shift+f move container to workspace number $ws4
+bindsym $mod+Shift+g move container to workspace number $ws5
+bindsym $mod+Shift+t move container to workspace number $ws6
+bindsym $mod+Shift+r move container to workspace number $ws7
+bindsym $mod+Shift+e move container to workspace number $ws8
+bindsym $mod+Shift+w move container to workspace number $ws9
+bindsym $mod+Shift+q move container to workspace number $ws10
 
 # Change focus
 bindsym $mod+h focus left
@@ -108,19 +127,42 @@ bindsym --release $mod+Insert exec --no-startup-id scrot --silent --select /home
 bindsym $mod+space mode $mode_applications
 bindsym $mod+b mode $mode_bluetooth
 bindsym $mod+Shift+Return mode $mode_windows_manager
-bindsym $mod+r mode $mode_resize
+bindsym $mod+Shift+space mode $mode_resize
 
 mode $mode_applications {
+  # workspace 1: A
+  bindsym Shift+t exec chromium --class Teams --app=https://teams.microsoft.com/, workspace number 1, mode "default"
+
+  # workspace 2: S
   bindsym t exec alacritty, workspace number 2, mode "default"
-  bindsym b exec firefox, workspace number 4, mode "default"
-  bindsym a exec anki, workspace number 1, mode "default"
-  bindsym c exec calibre, mode "default"
-  bindsym p exec pavucontrol, mode "default"
-  bindsym s exec stremio, workspace number 1, mode "default"
-  bindsym s exec steam, workspace number 1, mode "default"
-  bindsym w exec vboxmanage startvm "windows", workspace number 5, mode "default"
+
+  # workspace 3: D
+  bindsym n exec alacritty --class NeoVim -e nvim ~/Projects, workspace number 3, mode "default"
   bindsym i exec idea, workspace number 3, mode "default"
-  bindsym Shift+b exec chromium, mode "default"
+
+  # workspace 4: F
+  bindsym b exec firefox, workspace number 4, mode "default"
+
+  # workspace 5: G
+  bindsym w exec vboxmanage startvm "windows", workspace number 5, mode "default"
+  bindsym Shift+s exec steam, workspace number 5, mode "default"
+  bindsym d exec discord, workspace number 5, mode "default"
+
+  # workspace 6: T
+  bindsym c exec calibre, workspace number 6, mode "default"
+  bindsym Shift+p exec pavucontrol, workspace number 6, mode "default"
+
+  # workspace 7: R
+  bindsym Shift+b exec chromium, workspace number 7, mode "default"
+
+  # workspace 8: E
+  bindsym p exec postman, workspace number 8, mode "default"
+
+  # workspace 9: W
+  bindsym a exec anki, workspace number 9, mode "default"
+
+  # workspace 10: Q
+  bindsym s exec stremio, workspace number 10, mode "default"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -139,11 +181,17 @@ mode $mode_bluetooth {
 }
 
 mode $mode_windows_manager {
+  # change focus
+  bindsym h focus left
+  bindsym j focus down
+  bindsym k focus up
+  bindsym l focus right
+
   # move focused window
-  bindsym h move left
-  bindsym j move down
-  bindsym k move up
-  bindsym l move right
+  bindsym $mod+h move left
+  bindsym $mod+j move down
+  bindsym $mod+k move up
+  bindsym $mod+l move right
 
   # toggle tiling / floating
   bindsym space floating toggle
@@ -179,9 +227,11 @@ hide_edge_borders both
 # Fix floating windows
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [instance="(?i)teams"] floating disable
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 for_window [class="VirtualBox Machine"] fullscreen enable
+for_window [class="Stremio"] fullscreen enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
