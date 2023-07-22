@@ -17,5 +17,5 @@ for file in ./*/; do
     stow_cmd="stow"
   fi
 
-  echo $stow_cmd "$@" -t "$target" "$name_file"
+  $stow_cmd "$@" -t "$target" "$name_file"
 done
