@@ -4,6 +4,7 @@ declare -A targets
 
 targets["pacman"]="/etc/"
 targets["udev"]="/etc/udev/rules.d/"
+targets["bin"]="/bin/"
 
 for file in ./*/; do
   name_file=$(basename "$file")
@@ -12,9 +13,9 @@ for file in ./*/; do
     target="${targets["$name_file"]}"
     stow_cmd="sudo stow"
   else
-    target=/home/thecrawler/
+    target=$HOME
     stow_cmd="stow"
   fi
 
-  $stow_cmd "$@" -t "$target" "$name_file"
+  echo $stow_cmd "$@" -t "$target" "$name_file"
 done

@@ -1,1 +1,1 @@
-ACTION=="add", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c345", RUN+="/home/thecrawler/run_xmodmap.sh"
+ACTION=="add", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c345", RUN+="/bin/run_xmodmap.sh"
