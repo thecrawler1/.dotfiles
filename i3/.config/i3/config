@@ -240,7 +240,7 @@ for_window [class="Stremio"] fullscreen enable
 floating_modifier $mod
 
 # Set the wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-fill '$home/.dotfiles/.wallpaper/wallpaper.jpg'
+exec_always --no-startup-id feh --no-fehbg --bg-fill $home/.dotfiles/.wallpaper/wallpaper.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
