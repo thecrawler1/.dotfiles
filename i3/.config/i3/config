@@ -34,7 +34,7 @@ set $accent-color     	 #0073E5
 set $mod Mod1
 
 # Define bluetooth mac addresses
-set $headset "5C:C6:E9:12:4C:6F"
+set $headset "E8:EE:CC:68:AB:C6"
 
 # Define user
 set $home "/home/thecrawler"
