@@ -25,8 +25,8 @@ zstyle ':completion::complete:*' gain-privileges 1
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Lines to add alias
-alias vi=nvim
-alias vim=nvim
+alias vi=lvim
+alias vim=lvim
 alias ls='exa -l --icons'
 alias la='exa -a --icons'
 alias ll='exa -la --icons'

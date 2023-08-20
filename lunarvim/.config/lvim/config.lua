@@ -1,0 +1,8 @@
+require "thecrawler.autocmd"
+require "thecrawler.colorscheme"
+require "thecrawler.bufferline"
+require "thecrawler.breadcrumbs"
+require "thecrawler.keymaps"
+require "thecrawler.nvim-tree"
+require "thecrawler.plugins"
+require "thecrawler.quick-scope"
