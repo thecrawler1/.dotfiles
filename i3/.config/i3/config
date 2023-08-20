@@ -173,10 +173,10 @@ mode $mode_applications {
 }
 
 mode $mode_bluetooth {
-  bindsym f exec bluetoothctl power on, mode "default"
-  bindsym d exec bluetoothctl power off, mode "default"
-  bindsym j exec bluetoothctl connect $headset, mode "default"
-  bindsym k exec bluetoothctl disconnect $headset, mode "default"
+  bindsym f exec --no-startup-id bluetoothctl power on, mode "default"
+  bindsym d exec --no-startup-id bluetoothctl power off, mode "default"
+  bindsym j exec --no-startup-id bluetoothctl connect $headset, mode "default"
+  bindsym k exec --no-startup-id bluetoothctl disconnect $headset, mode "default"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
