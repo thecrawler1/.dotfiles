@@ -20,9 +20,13 @@ bindkey -M viins 'jk' vi-cmd-mode
 autoload -Uz compinit
 compinit
 zstyle ':completion::complete:*' gain-privileges 1
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
 # Line to configure zsh highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Lines to add alias
 alias vi=lvim
@@ -31,7 +35,7 @@ alias ls='exa -l --icons'
 alias la='exa -a --icons'
 alias ll='exa -la --icons'
 alias lo='ll --sort=modified'
-alias cat='bat --style=auto --theme="OneHalfDark"'
+alias cat='batcat --style=auto --theme="OneHalfDark"'
 alias top=btm
 alias grep='grep --color=auto'
 alias less=cat
@@ -43,6 +47,7 @@ alias cls=clear
 alias open='xdg-open'
 alias sudo='sudo -v; sudo '
 alias du='du -h'
+alias k=kubectl
 alias ...='../..'
 alias ....='../../..'
 alias .....='../../../..'
@@ -53,6 +58,10 @@ alias .........='../../../../../../../..'
 alias ..........='../../../../../../../../..'
 alias ...........='../../../../../../../../../..'
 alias zomboid=~/Games/ProjectZomboid/start.n.sh
+alias uh='bash uh'
+alias saca='uh saca | xclip -sel clip && echo "URL do saca copiado com sucesso!"'
+alias kb='setxkbmap us && xmodmap ~/.Xmodmap'
+alias c='bash ~/hotplug.sh'
 # End of lines adding alias
 
 # Load powerlevel10k
@@ -68,10 +77,11 @@ export PATH=/home/thecrawler/.cargo/bin:$PATH
 export PATH=/home/thecrawler/.local/bin:$PATH
 
 # Add zsh-autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Add asdf
-source /opt/asdf-vm/asdf.sh
+# source /opt/asdf-vm/asdf.sh
+. "$HOME/.asdf/asdf.sh"
 
 # Set lunar vim as the default editor
 export EDITOR=nvim

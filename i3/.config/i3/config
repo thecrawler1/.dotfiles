@@ -1,5 +1,14 @@
+# Define user
+set $home "/home/pmi_glisboa"
+
+# Configure screen
+exec --no-startup-id /home/pmi_glisboa/.screenlayout/main.sh
+
+# Configure keyboard
+exec --no-startup-id setxkbmap us
+
 # Config screens
-exec --no-startup-id polybar main
+exec --no-startup-id polybar -c $home/.config/polybar/config.ini main
 
 # Start picom
 exec --no-startup-id picom -i 1 -e 1 -D 8 -o 0 -r 0 -b
@@ -19,6 +28,7 @@ set $ws10 "10"
 # Define modes
 set $mode_applications "applications"
 set $mode_bluetooth "bluetooth"
+set $mode_uol "UOL HOST"
 set $mode_windows_manager "windows manager"
 set $mode_resize "resize"
 
@@ -37,10 +47,10 @@ set $mod Mod1
 set $headset "E8:EE:CC:68:AB:C6"
 
 # Define user
-set $home "/home/thecrawler"
+set $home "/home/pmi_glisboa"
 
 # Assign workspaces
-assign [class="(?i)teams"] $ws1
+assign [instance="(?i)teams"] $ws1
 assign [class="Alacritty"] $ws2
 assign [class="NeoVim"] $ws3
 assign [class="jetbrains-idea-ce"] $ws3
@@ -50,10 +60,14 @@ assign [class="steam"] $ws5
 assign [title="Discord"] $ws5
 assign [class="calibre"] $ws6
 assign [class="Pavucontrol"] $ws6
+assign [class="cisco"] $ws6
 assign [class="Chromium"] $ws7
+assign [class="squirrel"] $ws7
 assign [class="Postman"] $ws8
+assign [class="Remmina"] $ws9
 assign [class="Anki"] $ws9
 assign [class="Stremio"] $ws10
+assign [class="ZSTray"] $ws10
 
 # Kill focused window
 bindsym $mod+Shift+k kill
@@ -123,12 +137,13 @@ bindsym $mod+Shift+F4 exec --no-startup-id poweroff
 bindsym $mod+F5 restart
 
 # Take a screenshot
-bindsym --release Print exec --no-startup-id scrot --silent $home/Pictures/screenshot_%d-%m-%Y_%T.png
-bindsym --release $mod+Insert exec --no-startup-id scrot --silent --select $home/Pictures/screenshot_%d-%m-%Y_%T.png
+bindsym --release Print exec --no-startup-id scrot --silent $home/Pictures/screenshot_%d-%m-%Y_%H-%M-%S.png
+bindsym --release $mod+Insert exec --no-startup-id scrot --silent --select $home/Pictures/screenshot_%d-%m-%Y_%H-%M-%S.png
 
 # Switch to mode
 bindsym $mod+space mode $mode_applications
 bindsym $mod+b mode $mode_bluetooth
+bindsym $mod+u mode $mode_uol
 bindsym $mod+Shift+Return mode $mode_windows_manager
 bindsym $mod+Shift+space mode $mode_resize
 
@@ -137,11 +152,11 @@ mode $mode_applications {
   bindsym Shift+t exec chromium --class Teams --app=https://teams.microsoft.com/, workspace number 1, mode "default"
 
   # workspace 2: S
-  bindsym t exec alacritty, workspace number 2, mode "default"
+  bindsym t exec /home/pmi_glisboa/.cargo/bin/alacritty -e zsh, workspace number 2, mode "default"
 
   # workspace 3: D
-  bindsym n exec alacritty --class NeoVim -e nvim ~/Projects, workspace number 3, mode "default"
-  bindsym i exec idea, workspace number 3, mode "default"
+  bindsym n exec /home/pmi_glisboa/.cargo/bin/alacritty --class NeoVim -e zsh -c "nvim ~/Projects", workspace number 3, mode "default"
+  bindsym i exec intellij-idea-community, workspace number 3, mode "default"
 
   # workspace 4: F
   bindsym b exec firefox, workspace number 4, mode "default"
@@ -154,15 +169,18 @@ mode $mode_applications {
   # workspace 6: T
   bindsym c exec calibre, workspace number 6, mode "default"
   bindsym Shift+p exec pavucontrol, workspace number 6, mode "default"
+  bindsym Shift+c exec --no-startup-id /opt/cisco/anyconnect/bin/vpnui, workspace number 6, mode "default"
 
   # workspace 7: R
   bindsym Shift+b exec chromium, workspace number 7, mode "default"
+  bindsym q exec squirrelsql, workspace number 7, mode "default"
 
   # workspace 8: E
   bindsym p exec postman, workspace number 8, mode "default"
 
   # workspace 9: W
   bindsym a exec anki, workspace number 9, mode "default"
+  bindsym r exec remmina -c /home/pmi_glisboa/.local/share/remmina/group_rdp_a4-zenv2_a4-zenv2.remmina, workspace number 9, mode "default"
 
   # workspace 10: Q
   bindsym s exec stremio, workspace number 10, mode "default"
@@ -181,6 +199,17 @@ mode $mode_bluetooth {
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym $mod+b mode "default"
+}
+
+mode $mode_uol {
+  bindsym q exec --no-startup-id bash uh hostesse qa ; exec --no-startup-id notify-send -i /home/pmi_glisboa/Pictures/uol-icon.png -t 2000 -u normal "UOL HOST" "Environment changed to QA", mode "default"
+  bindsym p exec --no-startup-id bash uh hostesse prod ; exec --no-startup-id notify-send -i /home/pmi_glisboa/Pictures/uol-icon.png -t 2000 -u normal "UOL HOST" "Environment changed to PROD" , mode "default"
+  bindsym s exec --no-startup-id bash uh saca | xclip -sel clip ; exec --no-startup-id notify-send -i /home/pmi_glisboa/Pictures/uol-icon.png -t 2000 -u normal "UOL HOST" "SACA URL successfully copied" , mode "default"
+  bindsym Shift+s exec --no-startup-id bash uh saca | sed 's/.*permission=\(.*\)/\1/g' | tr -d '\n' | xclip -sel clip ; exec --no-startup-id notify-send -i /home/pmi_glisboa/Pictures/uol-icon.png -t 2000 -u normal "UOL HOST" "SACA permission successfully copied" , mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+u mode "default"
 }
 
 mode $mode_windows_manager {
@@ -258,3 +287,10 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # Disable title bar
 default_border pixel 1
 default_floating_border pixel 1
+
+# Launch apps
+exec --no-startup-id /opt/cisco/anyconnect/bin/vpnui
+exec --no-startup-id sh -c "systemctl --user import-environment DISPLAY XAUTHORITY; out=$(pidof ZSTray); if [ -z  $out ]; then systemctl --user start ZSTray ; else /opt/zscaler/bin/ZSTray %u; fi"
+exec --no-startup-id /opt/cososys/bin/epp-client
+exec chromium --class Teams --app=https://teams.microsoft.com/
+exec firefox
