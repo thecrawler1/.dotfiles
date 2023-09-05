@@ -2,8 +2,8 @@
 set -euo pipefail
 
 export DISPLAY=":0"
-export HOME=/home/thecrawler
-export XAUTHORITY="/home/thecrawler/.Xauthority"
+export HOME=/home/pmi_glisboa
+export XAUTHORITY="/home/pmi_glisboa/.Xauthority"
 
 min_seconds_between_executions=10
 date_file="/tmp/last-udev-xmodmap"
@@ -23,7 +23,7 @@ echo "$now" > "$date_file"
 
 do_xmodmap() {
     sleep 1
-    xmodmap /home/thecrawler/.Xmodmap
+    xmodmap /home/pmi_glisboa/.Xmodmap
 }
 
 do_xmodmap &> "${date_file}.log" &
