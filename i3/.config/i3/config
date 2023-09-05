@@ -2,12 +2,12 @@
 set $home "/home/pmi_glisboa"
 
 # Configure screen
-exec --no-startup-id /home/pmi_glisboa/.screenlayout/main.sh
+exec --no-startup-id $home/.screenlayout/main.sh
 
 # Configure keyboard
 exec --no-startup-id setxkbmap us
 
-# Config screens
+# Config polybar
 exec --no-startup-id polybar -c $home/.config/polybar/config.ini main
 
 # Start picom
@@ -45,9 +45,6 @@ set $mod Mod1
 
 # Define bluetooth mac addresses
 set $headset "E8:EE:CC:68:AB:C6"
-
-# Define user
-set $home "/home/pmi_glisboa"
 
 # Assign workspaces
 assign [instance="(?i)teams"] $ws1
