@@ -142,12 +142,12 @@ mode $mode_applications {
   # workspace 3: D
   bindsym n exec alacritty --class NeoVim -e nvim ~/Projects, workspace number 3, mode "default"
   bindsym i exec idea, workspace number 3, mode "default"
+  bindsym w exec vboxmanage startvm "windows", workspace number 3, mode "default"
 
   # workspace 4: F
   bindsym b exec firefox, workspace number 4, mode "default"
 
   # workspace 5: G
-  bindsym w exec vboxmanage startvm "windows", workspace number 5, mode "default"
   bindsym Shift+s exec steam, workspace number 5, mode "default"
   bindsym d exec discord, workspace number 5, mode "default"
 
