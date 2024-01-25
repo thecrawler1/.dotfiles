@@ -40,14 +40,13 @@ set $headset "E8:EE:CC:68:AB:C6"
 set $home "/home/thecrawler"
 
 # Assign workspaces
-assign [class="(?i)teams"] $ws1
+assign [title="Discord"] $ws1
 assign [class="Alacritty"] $ws2
 assign [class="NeoVim"] $ws3
 assign [class="jetbrains-idea-ce"] $ws3
+assign [class="VirtualBox Machine"] $ws3
 assign [class="(?i)firefox"] $ws4
-assign [class="VirtualBox Machine"] $ws5
 assign [class="steam"] $ws5
-assign [title="Discord"] $ws5
 assign [class="calibre"] $ws6
 assign [class="Pavucontrol"] $ws6
 assign [class="Chromium"] $ws7
@@ -134,7 +133,7 @@ bindsym $mod+Shift+space mode $mode_resize
 
 mode $mode_applications {
   # workspace 1: A
-  bindsym Shift+t exec chromium --class Teams --app=https://teams.microsoft.com/, workspace number 1, mode "default"
+  bindsym d exec discord, workspace number 1, mode "default"
 
   # workspace 2: S
   bindsym t exec alacritty, workspace number 2, mode "default"
@@ -149,7 +148,6 @@ mode $mode_applications {
 
   # workspace 5: G
   bindsym Shift+s exec steam, workspace number 5, mode "default"
-  bindsym d exec discord, workspace number 5, mode "default"
 
   # workspace 6: T
   bindsym c exec calibre, workspace number 6, mode "default"
