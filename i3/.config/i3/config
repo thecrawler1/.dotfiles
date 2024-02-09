@@ -21,6 +21,7 @@ set $mode_applications "applications"
 set $mode_bluetooth "bluetooth"
 set $mode_windows_manager "windows manager"
 set $mode_resize "resize"
+set $mode_web "web"
 
 # Define colors
 set $bg-color 	         #131313
@@ -131,6 +132,7 @@ bindsym $mod+space mode $mode_applications
 bindsym $mod+b mode $mode_bluetooth
 bindsym $mod+Shift+Return mode $mode_windows_manager
 bindsym $mod+Shift+space mode $mode_resize
+bindsym $mod+Shift+semicolon mode $mode_web
 
 mode $mode_applications {
   # workspace 1: A
@@ -169,7 +171,6 @@ mode $mode_applications {
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+space mode "default"
 }
 
 mode $mode_bluetooth {
@@ -180,7 +181,6 @@ mode $mode_bluetooth {
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+b mode "default"
 }
 
 mode $mode_windows_manager {
@@ -204,7 +204,6 @@ mode $mode_windows_manager {
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+Shift+Return mode "default"
 }
 
 mode $mode_resize {
@@ -215,7 +214,17 @@ mode $mode_resize {
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+r mode "default"
+}
+
+mode $mode_web {
+  bindsym g exec firefox https://chat.openai.com, workspace number 4, mode "default"
+  bindsym k exec firefox https://keep.google.com, workspace number 4, mode "default"
+  bindsym n exec firefox https://painel.neopro.com.br, workspace number 4, mode "default"
+  bindsym o exec firefox https://outlook.live.com, workspace number 4, mode "default"
+  bindsym p exec firefox https://docs.google.com/spreadsheets/d/1EPPtReJTyp_kNqUHrM9ALkLzglOW-dck3C8xIf-pddI/edit#gid=1519264020, workspace number 4, mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 # Set font
