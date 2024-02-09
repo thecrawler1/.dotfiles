@@ -217,11 +217,15 @@ mode $mode_resize {
 }
 
 mode $mode_web {
+  bindsym Shift+t exec firefox https://translate.google.com, workspace number 4, mode "default"
   bindsym g exec firefox https://chat.openai.com, workspace number 4, mode "default"
   bindsym k exec firefox https://keep.google.com, workspace number 4, mode "default"
   bindsym n exec firefox https://painel.neopro.com.br, workspace number 4, mode "default"
   bindsym o exec firefox https://outlook.live.com, workspace number 4, mode "default"
   bindsym p exec firefox https://docs.google.com/spreadsheets/d/1EPPtReJTyp_kNqUHrM9ALkLzglOW-dck3C8xIf-pddI/edit#gid=1519264020, workspace number 4, mode "default"
+  bindsym t exec firefox https://twitch.com, workspace number 4, mode "default"
+  bindsym w exec firefox https://web.whatsapp.com, workspace number 4, mode "default"
+  bindsym y exec firefox https://youtube.com, workspace number 4, mode "default"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
