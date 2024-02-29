@@ -75,3 +75,6 @@ source /opt/asdf-vm/asdf.sh
 
 # Set lunar vim as the default editor
 export EDITOR=nvim
+
+# gcloud
+source /etc/profile.d/google-cloud-cli.sh
