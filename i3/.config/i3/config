@@ -32,7 +32,7 @@ set $urgent-bg-color     #E53935
 set $accent-color     	 #0073E5
 
 # Define the mod key
-set $mod Mod1
+set $mod Mod4
 
 # Define bluetooth mac addresses
 set $headset "E8:EE:CC:68:AB:C6"
@@ -112,13 +112,13 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # Start dmenu
-bindsym $mod+semicolon exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "MesloLGS NF Regular-12" -nb "$bg-color" -sb "$accent-color" -nf "$text-color"'
+bindsym $mod+BackSpace exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "MesloLGS NF Regular-12" -nb "$bg-color" -sb "$accent-color" -nf "$text-color"'
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+Return fullscreen toggle
 
 # Turn off the PC
-bindsym $mod+Shift+F4 exec --no-startup-id poweroff
+bindsym $mod+F4 exec --no-startup-id poweroff
 
 # Reload the configuration file
 bindsym $mod+F5 restart
@@ -128,11 +128,11 @@ bindsym --release Print exec --no-startup-id scrot --silent $home/Pictures/scree
 bindsym --release $mod+Insert exec --no-startup-id scrot --silent --select $home/Pictures/screenshot_%d-%m-%Y_%T.png
 
 # Switch to mode
-bindsym $mod+space mode $mode_applications
+bindsym $mod+Tab mode $mode_applications
 bindsym $mod+b mode $mode_bluetooth
-bindsym $mod+Shift+Return mode $mode_windows_manager
-bindsym $mod+Shift+space mode $mode_resize
-bindsym $mod+Shift+semicolon mode $mode_web
+bindsym $mod+m mode $mode_windows_manager
+bindsym $mod+n mode $mode_resize
+bindsym $mod+comma mode $mode_web
 
 mode $mode_applications {
   # workspace 1: A
