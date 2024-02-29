@@ -29,10 +29,15 @@ lvim.keys.visual_mode[">"] = ">gv"
 lvim.keys.visual_mode["<"] = "<gv"
 
 -- NvimTree
-lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeFocus<CR>", "Exploer Focus" }
-lvim.builtin.which_key.mappings["E"] = { "<cmd>NvimTreeToggle<CR>", "Exploer Toggle" }
+lvim.builtin.which_key.mappings["e"] = { "<cmd>NvimTreeFocus<cr>", "Explorer Focus" }
+lvim.builtin.which_key.mappings["E"] = { "<cmd>NvimTreeToggle<cr>", "Explorer Toggle" }
 
-lvim.builtin.which_key.mappings["j"] = { "<cmd>Telescope live_grep<CR>", "Find text" }
+-- Diagnostics
+lvim.builtin.which_key.mappings["j"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" }
+lvim.builtin.which_key.mappings["k"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" }
 
 -- Close all but this
-lvim.builtin.which_key.mappings["t"] = { "<cmd>lua Wipeout_buffers()<CR>", "Close all but this" }
+lvim.builtin.which_key.mappings["t"] = { "<cmd>lua Wipeout_buffers()<cr>", "Close all but this" }
+
+-- TreeSJ
+lvim.builtin.which_key.mappings["m"] = { "<cmd>TSJToggle<cr>", "Split/join block" }

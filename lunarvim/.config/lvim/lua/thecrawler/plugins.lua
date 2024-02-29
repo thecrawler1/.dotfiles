@@ -14,10 +14,22 @@ lvim.plugins = {
     end
   },
   {
-    "tpope/vim-surround"
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+      })
+    end,
   },
   {
-    "tpope/vim-repeat"
+    'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({
+        use_default_keymaps = false
+      })
+    end
   },
   {
     "epwalsh/obsidian.nvim",
@@ -25,15 +37,15 @@ lvim.plugins = {
     lazy = true,
     ft = "markdown",
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      "nvim-lua/plenary.nvim"
     },
     opts = {
       workspaces = {
         {
           name = "StorageBrain",
-          path = "~/StorageBrain",
-        },
-      },
-    },
+          path = "~/StorageBrain"
+        }
+      }
+    }
   }
 }
