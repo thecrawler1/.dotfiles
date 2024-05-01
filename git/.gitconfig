@@ -2,6 +2,6 @@
 	name = Gabriel Alves
 	email = gabrielalves@outlook.com
 [core]
-	editor = nvim
+	editor = nvim -f
 [init]
 	defaultBranch = main
